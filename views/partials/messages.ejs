@@ -1,10 +1,31 @@
 <% if(typeof errors != 'undefined') { %>
-<div class="alert alert-dismissible alert-success mt-2">
+<div class="alert alert-dismissible alert-danger mt-2">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <% errors.forEach(function(error) { %>
 
     <li style="list-style: none; margin-bottom: 4px;"><%= error.msg %></li>
 
     <% }); %>
+</div>
+<% } %>
+
+<% if(success_msg != '') { %>
+<div class="alert alert-dismissible alert-info mt-2">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= success_msg %>
+</div>
+<% } %>
+
+<% if(error_msg != '') { %>
+<div class="alert alert-dismissible alert-warning mt-2">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= error_msg %>
+</div>
+<% } %>
+
+<% if(error != '') { %>
+<div class="alert alert-dismissible alert-warning mt-2">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= error %>
 </div>
 <% } %>
